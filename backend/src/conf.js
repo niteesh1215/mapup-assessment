@@ -1,6 +1,6 @@
 const ENV = (() => {
   let ENV = 'local'
-  if (!process.env.KAREVOL_API) {
+  if (!process.env.ASSESMENT_APP) {
     console.log(`ENV is not provided
     Set Environment variable as
         export ASSESMENT_APP=prod

@@ -2,11 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend-assignment",
-  "main": "index.js",
+  "main": "./src/app.js",
   "scripts": {
+    "dev": "node ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "niteesh mahato",
+  "author": "Niteesh Mahato",
   "license": "ISC",
   "dependencies": {
     "@turf/turf": "^6.5.0",
