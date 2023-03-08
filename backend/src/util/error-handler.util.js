@@ -23,14 +23,14 @@ class HttpError extends Error {
 class BadRequestError extends HttpError {
   constructor (reqId, message) {
     super(reqId, 400, message)
-    logger.info('reqId=%s BadRequest message=%s stack=%o', reqId, message, this.stack)
+    logger.info('reqId=%s BadRequestError message=%s stack=%o', reqId, message, this.stack)
   }
 }
 
 class UnauthorizedError extends HttpError {
   constructor (reqId, message) {
     super(reqId, 401, message)
-    logger.info('reqId=%s BadRequest message=%s stack=%o', reqId, message, this.stack)
+    logger.info('reqId=%s UnauthorizedError message=%s stack=%o', reqId, message, this.stack)
   }
 }
 
