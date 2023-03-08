@@ -27,7 +27,7 @@ const intersections = (req, res) => {
   /** The long line for which to check the intersections */
   const longLine = req.body
 
-  if (!longLine) throw new BadRequestError('Body missing')
+  if (!longLine) throw new BadRequestError(req.reqId, 'Body missing')
   if (longLine.type !== 'LineString') throw new BadRequestError(req.reqId, 'GeoJSON type [LineString] expected')
 
   const result = [] // Will contain all the intersecting lines number with intersection points
@@ -37,7 +37,7 @@ const intersections = (req, res) => {
     longLineString = turf.lineString(longLine.coordinates)
   } catch (err) {
     /** If there's any error in parsing the lineString then that means the coordinates are invalid */
-    throw new BadRequestError('Invalid coordinates ' + String(err))
+    throw new BadRequestError(req.reqId, 'Invalid coordinates ' + String(err))
   }
 
   /** For each pre-defined specified lines check the intersection with the long line. */
