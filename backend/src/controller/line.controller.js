@@ -28,7 +28,7 @@ const intersections = (req, res) => {
   const longLine = req.body
 
   if (!longLine) throw new BadRequestError('Body missing')
-  if (longLine.type !== 'LineString') throw new BadRequestError('GeoJSON type [LineString] expected')
+  if (longLine.type !== 'LineString') throw new BadRequestError(req.reqId, 'GeoJSON type [LineString] expected')
 
   const result = [] // Will contain all the intersecting lines number with intersection points
   let longLineString
